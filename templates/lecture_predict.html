@@ -1,0 +1,109 @@
+{%extends "base.html" %}
+{%block title%}Lectures Calculator{%endblock%}
+{%block icon%}href="https://img.icons8.com/ios/512/student-center.png"{%endblock%}
+
+{%block style%}
+  <style>
+    a.button4{
+      display:inline-block;
+      padding:0.3em 1.2em;
+      margin:0 0.1em 0.1em 0;
+      border:0.16em solid rgba(255,255,255,0);
+      border-radius:2em;
+      box-sizing: border-box;
+      text-decoration:none;
+      font-family:'Roboto',sans-serif;
+      font-weight:300;
+      color:#FFFFFF;
+      text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+      text-align:center;
+      transition: all 0.2s;
+    }
+    a.button4:hover{
+      border-color: rgba(255,255,255,1);
+    }
+    @media all and (max-width:30em){
+    a.button4{
+    display:block;
+    margin:0.2em auto;
+    }
+    } 
+    #footer {
+    text-align: center;
+    padding: 10px 0px 0px 10px;
+    bottom: 0;
+    width: 100%;
+    height: 65px;
+    background: transparent;
+    }
+
+    .center {
+      margin: auto;
+      width: fit-content;
+      border: 5px solid grey;
+      border-radius: 20px;
+      padding: 25px;
+      background-color: transparent;
+    } 
+
+      .imageContainer {
+       width:50px; 
+       height:50px; 
+       background: dark;
+       background-image: url(/static/index.png);
+       }
+
+      .box{
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+      margin: 0;
+      padding: 0;
+      }  
+  </style>
+{%endblock%}       
+
+
+{%block body%}
+  <header>  
+    <div style="text-align:center">
+    <img src="/static/logo.jpeg" width="180" height="180" style="border-radius: 50%;" ><br>
+    <p style="color: yellow" ><font size="+2"><strong><mark>Attendance Checker</mark></strong></font></p>
+      
+    <div class="center">
+    <form  method="get">
+
+    <p style="color: white; font-weight: 1000;"><strong>Note:</strong> This Page is helpful for Those Students Whose Attendance is Falling Short(below 75%).</p>
+    <p style="color: white; font-weight: 1000;"><strong>Note: </strong> None of your data is being stored or used anywhere.</p><br>  
+
+    <label id="icon" for="name"></label><i class="fas fa-user" aria-hidden="true"></i></label>
+    <input type="text" style="height: 3.5%; width: 80%;" size="30%" background-color: whitesmoke; maxlength="20" minlength="1" name="name" id="name" value="{{name}}" placeholder="Your Name" required/>  
+    <br><br>  
+    
+    <label id="icon" for="curr_lec"><i class="fas fa-graduation-cap" style="font-size:15px"></i></label>
+    <a><b>Number of Lectures Attended BY YOU</b></a>
+    <input type="number" style="height: 3.5%; width: 80%;" min="1" max="200"  name="curr_lec" id="curr_lec" value={{curr_lec}} placeholder="" required/>  
+    <br><br>
+    
+    <label id="icon" for="tot_lec"><i class="fas fa-pencil-square-o " style="font-size:15px"></i></label>
+    <a><b>Number of Lectures Delivered BY TEACHER</b></a>
+    <input type="number" style="height: 3.5%; width: 80%;" min="1" max="200" name="tot_lec" id="tot_lec" value={{tot_lec}} placeholder="" required/>
+    <br><br>
+
+    <input  type="submit" value="Calculate" style="border-radius: 25px; height: 5%; width: 30%; color: yellow; background-color:black; border-color: aqua;" >
+    <br> <br> 
+    <hr>  
+    <div id="output" ></div>
+    <p class="output-statement"><strong>Dear <mark><b>{{name}}</b></mark> : Your current ATTENDANCE is: <spin style="color: red">{{per}}% </spin></strong></p>
+        <p class="output-statement" ><strong>To get a minimum of 75% ATTENDANCE you need to attend atleast {{val1}} out of {{val2}} lectures  now onwards.</strong></p>
+        <p class="output-statement"><mark><strong>In Simple words: You need to attend <spin style="color: red">{{temp}}</spin> more lectures.</strong></mark></p>
+        
+    <hr>
+    </div>
+    </form>
+    </div> 
+  </header>
+  <div id="footer">
+  &lt;&lt;&lt; ©<a href="https://github.com/dhimanparas20" target="_blank"> Paras Dhiman</a> &gt;&gt;&gt;
+  </div>   
+{%endblock%}

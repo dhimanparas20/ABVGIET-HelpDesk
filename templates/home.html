@@ -1,0 +1,122 @@
+{%extends "base.html" %}
+
+{%block title%}Home{%endblock%}
+{%block icon%}href="/static/home.png"{%endblock%}
+
+
+{%block body%}
+ 
+  <!--CAROUSEL-->
+  <div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <!--<img src="https://source.unsplash.com/2400x800/?digital" class="d-block w-100" alt="...">-->
+      <img src="/static/forest.jpeg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="/static/shimla.jpeg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="/static/snow.jpeg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+  </div>
+
+  <main>
+      <!-- Marketing messaging and featurettes
+      ================================================== -->
+      <!-- Wrap the rest of the page in another container to center all the content. -->
+      <div class="container marketing py-4">
+      
+        <!-- Three columns of text below the carousel -->
+        <div style="border: 1px solid white; border-radius: 30px; padding: 15px; min-width:100px; display: inline-block" >
+        <div class="row ">
+          <div class="col-lg-4 ">
+            <img src="/static/calculator.jpeg" alt="Avatar" class="avatar">
+            <h2 class="fw-normal">Lecture Calculator</h2>
+            <p>Is your current attendance below 75% ? We can calculate the No. of lectures you need to attend to prevent detention</p>
+            <p><a class="btn btn-secondary" href={{ url_for('lecture_predict') }}>View details »</a></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <img src="/static/convert.png" alt="/static/convert.png" class="avatar">
+            <h2 class="fw-normal">Base Conversion</h2>
+            <p>Convert values from one Number System To Another. Helpful during first four semesters of the course.</p>
+            <p><a class="btn btn-secondary" href={{ url_for('convert') }}>View details »</a></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <img src="/static/hrtc.jpeg" alt="Avatar" class="avatar">
+            <h2 class="fw-normal">Check 
+              Bus Timings
+            </h2>
+            <p>Tired of waiting for buses? We got you covered. Now no need to wait for buses and get bored. check the timings and get buses on time </p>
+            <p><a class="btn btn-secondary" href={{ url_for('bus_timing') }}>View details »</a></p>
+          </div>
+          </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+    
+    
+        <!-- START THE FEATURETTES -->
+    
+        <hr class="featurette-divider">
+    
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading fw-normal lh-1">About ABVGIET<span class="text-muted">It’ll blow your mind.</span></h2>
+            <p class="lead">Atal Bihari Vajpayee Government Institute of Engineering & Technology was established in 10 april 2011. It is the Second Government Regional Engineering institute of Himachal Pradesh which is located at Pragatinagar Village Gumma, Teh. Kotkhai, Distt. Shimla on the bank of river Giri Ganga about 60 km from Shimla on Shimla Rohru National Highway. Presently three disciplines has been running under the same roof i.e B.Tech., Polytechnic and I.T.I. B.Tech presently running two courses i.e Computer Science & Engineering and Electronics & Communication Engineering each with the intake of 63 students. Polytechnic presently offers three courses i.e Computer Engineering , Electronics & Communication Engg. and Electrical Engg. each with the intake of 40 students. I.T.I is presently running four courses i.e Electrical, Electronics, Fitter and Motor Vehicle Mechanic each with the intake of 21 students.</p>
+          </div>
+          <div class="col-md-5">
+            <img src="/static/campus.jpg" alt="Avatar1" class="avatar1">
+          </div>
+        </div>
+    
+        <hr class="featurette-divider">
+    
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">Its tea break, OH Yeah! lets sit here and have some sun-bath.The ideal place for all gup-shups and chattering.</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img src="/static/logs.jpg" alt="Avatar1" class="avatar1">
+          </div>
+        </div>
+    
+        <hr class="featurette-divider">
+    
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading fw-normal lh-1">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+            <p class="lead">Its December-February, keep your mobiles charged, body warm and food ready, cause you never know when the light goes off or Snow falls out. You'd die to see this type of View. Once the shower happens you'll find yourself in another place, heaven I'd say.</p>
+          </div>
+          <div class="col-md-5">
+            <img src="/static/snow.jpg" alt="Avatar1" class="avatar1">
+          </div>
+        </div>
+    
+        <hr class="featurette-divider">
+    
+        <!-- /END THE FEATURETTES -->
+    
+      </div><!-- /.container -->
+    
+      <!-- FOOTER -->
+      <footer class="container">
+        <p class="float-end"><a href="#">Back to top</a></p>
+        <p>© 2022–2069 MST-Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+      </footer>
+  </main>
+        <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+{%endblock%}

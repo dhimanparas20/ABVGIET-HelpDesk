@@ -1,0 +1,106 @@
+{%extends "base.html" %}
+{%block title%}Download Syllabus{%endblock%}
+{%block icon%}href="/static/ebook.png"{%endblock%}
+
+{%block style%}
+<style>
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  .b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
+
+  .b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+  }
+
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+
+  .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+  }
+
+  .nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  #page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  #content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+  }
+  
+  #footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;            /* Footer height */
+  }
+
+</style>
+{%endblock%}
+
+
+{%block body%}
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  
+  <main class="px-3">
+    <h1>Combined HPTU Syllabus</h1>
+    <p class="lead">
+      <a href="http://www.abvgiet.org/btech/downloads/pdf/combined_cbcs.pdf" target="_blank" class="btn btn-lg btn-light fw-bold border-dark bg-white">View</a>
+      <a href="/download_syllabus" target="_blank" class="btn btn-lg btn-light fw-bold border-white bg-white">Download</a>       
+
+        <br><br><hr>
+        <h3>1st Year combined Syllabus</h3>
+        <p><a href="https://www.himtu.ac.in/pdf/1st-Year_CBCS_Common-for-all-branch.pdf"target="_blank" class="btn btn-lg btn-light fw-bold border-white bg-white">View</a></p>
+        <hr>
+        <h3>CSE Syllabus</h3>
+        <p><a href="https://www.himtu.ac.in/pdf/Computer-Science-Engg._3rd-to-8th-Sem_CBCS.pdf" target="_blank" class="btn btn-lg btn-light fw-bold border-white bg-white">3rd to 8th Semester</a></p>
+
+        <hr>
+        <h3>ECE Syllabus</h3>
+        <p><a href="https://www.himtu.ac.in/pdf/Electronics-Communication-Engg._3rd-to-8th-Sem_CBCS.pdf" target="_blank" class="btn btn-lg btn-light fw-bold border-white bg-white">3rd to 8th Semester</a></p>
+        <hr>
+        <h3>EE Syllabus</h3>
+        <p><a href="https://www.himtu.ac.in/pdf/Electrical-Engg._3rd-to-8th-Sem_CBCS.pdf" target="_blank" class="btn btn-lg btn-light fw-bold border-white bg-white" rel="noopener noreferrer" target="_blank">3rd to 8th Semester</a></p>            
+        <hr>
+    </p>
+
+  </main>
+  <footer ><p>A site by  <a href="https://github.com/dhimanparas20" target="_blank" class="text-white"><a>© MST-PRODUCTION</a></p></footer>
+  </div>
+
+{%endblock%}

@@ -1,0 +1,53 @@
+{%extends "base.html" %}
+{%block title%}Important Contacts{%endblock%}
+{%block icon%}href="/static/pne.png"{%endblock%}
+
+{%block style%}
+table,
+    th,
+    td {
+        border: 2px solid white;
+        border-collapse: collapse;
+    }
+    th,
+    td {
+        padding: 10px;
+    }
+{%endblock%}
+
+{%block body%}
+<br><h2 style="text-align:center"><mark>Some Must have Contacts</mark></h2><br>
+<table style="width:100%">
+  <tr>
+      <th>Name</th>
+      <th>Place Holder</th>
+      <th>Contact</th>
+  </tr>
+  <tr>
+      <td>Jaka</td>
+      <td>Taxi</td>
+      <td>+919882473082</td>
+  </tr>
+  <tr>
+      <td>Gumma Taxi Union</td>
+      <td>Taxi Booking</td>
+      <td>+919218800064</td>
+  </tr>
+  <tr>
+      <td>Farzana</td>
+      <td>Shop</td>
+      <td>+918629830010</td>
+  </tr>
+  <tr>
+    <td>Gupta Ji</td>
+    <td>Shop</td>
+    <td>+919506808052</td>
+  </tr>
+  <tr>
+    <td>Speedy-Pizza</td>
+    <td>Food and Services</td>
+    <td>+918219251903</td>
+  </tr>
+    </table>
+
+{%endblock%}
