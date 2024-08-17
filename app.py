@@ -1,21 +1,11 @@
 from flask import Flask, redirect, render_template,make_response,send_file ,send_from_directory,url_for
 from flask_restful import Resource, Api ,request 
 from os import system, getcwd,path,getenv
-import pymongo 
 import pyqrcode
 import png
 
 system("clear")
 cwd = getcwd()
-#pass MONGO_PASS env variable in hosting system
-MONGO_PASS = getenv("MONGO_PASS",default=None)
-#Connecting to the  client local/cloud.
-'''client = pymongo.MongoClient("mongodb://localhost:27017/")'''
-client = pymongo.MongoClient(f"mongodb+srv://dhimanparas:{MONGO_PASS}@abvgiet.c7ne0df.mongodb.net/?retryWrites=true&w=majority")
-
-#Creating a collection/datafield
-db = client["ABVGIET"]  #name of DB
-collection = db['messages'] # name of collection
 
 # The function that predicts lectures.
 def check(curr_lec,tot_lec):
@@ -162,17 +152,7 @@ class Content(Resource):
       print(dir,filename)
       return send_from_directory(f"{cwd}/content/{dir}",filename,as_attachment=True)  
  
-# Image AI    
-class Image(Resource):
-    def get(self):
-      name = request.args.get('name')
-      width = request.args.get('width')
-      height = request.args.get('height')
-      if width==None and height==None and name==None:
-        return make_response(render_template('image.html'))
-      else:
-        return redirect(f"https://source.unsplash.com/{width}x{height}/?{name}")
- 
+
 #Return Bus Timing page      
 class Bus_Timing(Resource):
     def get(self):
@@ -183,21 +163,6 @@ class Contacts(Resource):
     def get(self):
       return make_response(render_template('contacts.html'))  
   
-#Send Anonymous messages    
-class Message(Resource):
-    def get(self):
-      name = request.args.get("name")
-      message = request.args.get("message")
-      data = collection.find_one({"message":message})
-      lst = ["sala","die"]  
-      if data!=None:
-        if message==data['message']:  #IF message alredy in Database
-          return make_response(render_template('message.html'))   
-      if name != None and message != None and lst[0] not in message:
-        dict = {"name":name ,"message":message}
-        collection.insert_one(dict)   
-      return make_response(render_template('message.html'))    
-
 #Generate QR-Code
 class Qr(Resource):
     def get(self):
@@ -220,12 +185,10 @@ api.add_resource(Download, '/download/', methods=['GET', 'POST'])
 api.add_resource(Content, '/content/<dir>/<filename>/', methods=['GET', 'POST'])
 api.add_resource(Lecture_Predict, '/lecture_predict/', methods=['GET', 'POST'])
 api.add_resource(Convert, '/convert/', methods=['GET', 'POST'])  
-api.add_resource(Image, '/image/', methods=['GET', 'POST'])  
 api.add_resource(Bus_Timing, '/bus_timing/', methods=['GET', 'POST'])
-api.add_resource(Message, '/message/', methods=['GET', 'POST'])
 api.add_resource(Contacts, '/contacts/', methods=['GET', 'POST'])
 api.add_resource(Qr, '/qr/', methods=['GET', 'POST'])
 
 #Running the Web-App Debug Mode
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,port=5000,host="0.0.0.0",threaded=True)

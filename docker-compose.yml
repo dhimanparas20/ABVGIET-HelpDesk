@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+    ports:
+      - "80:5000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - .:/app
+    restart: unless-stopped
+    command: ["gunicorn", "-b", "0.0.0.0:5000", "app:app"]
